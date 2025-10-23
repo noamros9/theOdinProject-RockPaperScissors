@@ -4,4 +4,12 @@ function getComputerChoice() {
     return choices[randomNum];
 }
 
-console.log(getComputerChoice());
+function getPlayerChoice() {
+    let choice = prompt("Enter rock, paper, or scissors:").toLowerCase();
+    while (!['rock', 'paper', 'scissors'].includes(choice)) {
+        choice = prompt("Invalid choice. Please enter rock, paper, or scissors:").toLowerCase();
+    }
+    return choice;
+}
+
+console.log(getComputerChoice() + " " + getPlayerChoice());
