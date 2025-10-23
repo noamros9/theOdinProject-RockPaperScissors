@@ -16,7 +16,7 @@ let playerScore = 0;
 let computerScore = 0;
 
 function playRound() {
-    while (prompt("Should we play another round?") != "No") {
+    while (!["y", "yes"].includes(prompt("Would you like to stop? [y / yes]").toLowerCase())) {
         const playerSelection = getPlayerChoice();
         const computerSelection = getComputerChoice();
         console.log("human selection is" + " " + playerSelection + ". computer selection is " + computerSelection);
@@ -34,8 +34,9 @@ function playRound() {
             computerScore++;
         }
         console.log(`The score is human: ${playerScore}. computer: ${computerScore} `);
-
     }
+    console.log(playerScore > computerScore ? "Human won" : playerScore === computerScore ? "It's a draw" : "computer won");
+    console.log("Thank you for playing!");
 }
 
 playRound();
