@@ -37,6 +37,8 @@ function restartGame() {
     playerScore = 0;
     computerScore = 0;
 
+    const playOptions = document.querySelector("#playOptions");
+    playOptions.style.display = "block";
     const humanScore = document.querySelector("#humanScore");
     humanScore.textContent = `Your score is: ${playerScore}`;
     const computerScoreText = document.querySelector("#computerScoreText");
@@ -51,6 +53,9 @@ function restartGameQuestion() {
     const resetGameButton = document.createElement("button");
     resetGameButton.textContent = "Reset";
     resetGameButton.addEventListener('click', restartGame);
+
+    const playOptions = document.querySelector("#playOptions");
+    playOptions.style.display = "none";
 
     const askPlayerToRestart = document.createElement("div");
     askPlayerToRestart.id = "askPlayerToRestart"
@@ -72,6 +77,9 @@ function endGame() {
 
 
 function setupGame() {
+    const playOptions = document.querySelector("#playOptions");
+    playOptions.style.display = "block";
+
     buttons = document.querySelectorAll("button");
     buttons.forEach(button => {
         button.addEventListener('click', (event) => {
